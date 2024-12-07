@@ -3,6 +3,7 @@
 #include "dependencies/CTextEngine.h"
 #include "dependencies/CSilverChainApiNoDependenciesIncluded.h"
 
+//============================ Generators =================================================
 LuaCEmbedResponse * private_silver_chain_lua_generator(LuaCEmbed *args){
     char *src = LuaCEmbed_get_str_arg(args, 0);
     char *import_dir = LuaCEmbed_get_str_arg(args,1);
@@ -32,8 +33,25 @@ LuaCEmbedResponse * private_silver_chain_lua_generator_watch_mode(LuaCEmbed *arg
     return NULL;
 }
 
+//============================ Errors ========================================================
 
+LuaCEmbedResponse * private_silver_chain_lua_get_error_msg(LuaCEmbed *args){
+    SilverChainError *error = (SilverChainError*)LuaCEmbed_get_long_arg(args,0);
+    return LuaCEmbed_send_str(error->error_msg);
+}
 
+LuaCEmbedResponse * private_silver_chain_lua_get_error_path(LuaCEmbed *args){
+    SilverChainError *error = (SilverChainError*)LuaCEmbed_get_long_arg(args,0);
+    return LuaCEmbed_send_str(error->error_path);
+}
+
+LuaCEmbedResponse * private_silver_chain_lua_free_error(LuaCEmbed *args){
+    SilverChainError *error = (SilverChainError*)LuaCEmbed_get_long_arg(args,0);
+    SilverChainError_free(error);
+    return NULL;
+}
+
+//============================ String Array =================================================
 LuaCEmbedResponse * private_silver_chain_lua_new_SiverChainStringArray(LuaCEmbed *args){
     SilverChainStringArray *value = newSilverChainStringArray();
     return LuaCEmbed_send_long((long)value);
@@ -57,13 +75,6 @@ LuaCEmbedResponse * private_silver_chain_lua_apend_SiverChainStringArray(LuaCEmb
 int luaopen_private_silverchain_cinterop(lua_State *state){
     //functions will be only assescible by the required reciver
     LuaCEmbed * l = newLuaCEmbedLib(state);
-    LuaCEmbed_set_long_lib_prop(l,"CAMALGAMATOR_UNEXPECTED_ERROR",CAMALGAMATOR_UNEXPECTED_ERROR);
-    LuaCEmbed_set_long_lib_prop(l,"CAMALGAMATOR_DONT_INCLUDE",CAMALGAMATOR_DONT_INCLUDE);
-    LuaCEmbed_set_long_lib_prop(l,"CAMALGAMATOR_DONT_CHANGE",CAMALGAMATOR_DONT_CHANGE);
-    LuaCEmbed_set_long_lib_prop(l,"CAMALGAMATOR_INCLUDE_ONCE",CAMALGAMATOR_INCLUDE_ONCE);
-    LuaCEmbed_set_long_lib_prop(l,"CAMALGAMATOR_INCLUDE_PERPETUAL",CAMALGAMATOR_INCLUDE_PERPETUAL);
 
-    LuaCEmbed_add_callback(l,"generate_amalgamation_simple",private_lua_c_amalgamator_generate_amalgamation_simple);
-    LuaCEmbed_add_callback(l,"generate_amalgamation_complex",private_lua_c_amalgamator_generate_amalgamation_complex);
     return LuaCembed_send_self_as_lib(l);
 }
