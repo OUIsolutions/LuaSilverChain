@@ -1,5 +1,8 @@
 # Prerequisites
 *.d
+release
+dependencies
+darwin.c
 
 # Object files
 *.o
