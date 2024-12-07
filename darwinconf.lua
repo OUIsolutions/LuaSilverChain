@@ -92,5 +92,5 @@ generate_darwin_no_dependencie_not_included()
 dtw.copy_any_overwriting("types/luaSilverCHain_types.lua", "LuaSilverChain/types.lua")
 dtw.copy_any_overwriting("init.lua", "LuaSilverChain/init.lua")
 
-os.execute("gcc -shared -fpic release/lua_c_amalgamator_full.c -o LuaCAmalgamator/lua_c_amalgamator.so")
+os.execute("gcc -shared -fpic release/lua_silver_chain_shared.c -o LuaCAmalgamator/lua_silver_chain_shared.so")
 --os.execute("zip -r  release/LuaCAmalgamator.zip LuaCAmalgamator/")
