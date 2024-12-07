@@ -5,5 +5,8 @@ private_silver_chain.check_types = function(value, types, name)
             return
         end
     end
-    error("arg " .. name .. "not in [" .. table.concat(types, ",") .. "]")
+    if #types == 1 then
+        error("arg " .. name .. " not '" .. types[1] .. "'")
+    end
+    error("arg " .. name .. " not in [" .. table.concat(types, ",") .. "]")
 end

@@ -4,7 +4,7 @@
 #include "dependencies/CSilverChainApiNoDependenciesIncluded.h"
 
 char * private_silver_chain_get_str_arg_if_exist(LuaCEmbed *args,int index){
-    if(LuaCEmbed_get_arg_type(args, index)){
+    if(LuaCEmbed_get_arg_type(args, index) == LUA_CEMBED_STRING){
         return  LuaCEmbed_get_str_arg(args,index);
     }
     return NULL;
