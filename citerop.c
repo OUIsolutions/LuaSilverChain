@@ -3,6 +3,13 @@
 #include "dependencies/CTextEngine.h"
 #include "dependencies/CSilverChainApiNoDependenciesIncluded.h"
 
+char * private_silver_chain_get_str_arg_if_exist(LuaCEmbed *args,int index){
+    if(LuaCEmbed_get_arg_type(args, index)){
+        return  LuaCEmbed_get_str_arg(args,index);
+    }
+    return NULL;
+}
+
 //============================ Generators =================================================
 LuaCEmbedResponse * private_silver_chain_lua_generator(LuaCEmbed *args){
     char *src = LuaCEmbed_get_str_arg(args, 0);
@@ -10,14 +17,11 @@ LuaCEmbedResponse * private_silver_chain_lua_generator(LuaCEmbed *args){
     char * project_short_cut =  LuaCEmbed_get_str_arg(args,2);
     SilverChainStringArray *tags = (SilverChainStringArray*)LuaCEmbed_get_long_arg(args,3);
     bool implement_main = LuaCEmbed_get_bool_arg(args, 4);
-    char *main_name = LuaCEmbed_get_str_arg(args,5);
-    char *main_path = LuaCEmbed_get_str_arg(args,5);
+    char *main_name = private_silver_chain_get_str_arg_if_exist(args,5);
+    char *main_path = private_silver_chain_get_str_arg_if_exist(args,5);
 
     SilverChainError *error = SilverChain_generate_code(src,import_dir,project_short_cut,tags,implement_main, main_name,main_path);
-    if(error){
-        return LuaCEmbed_send_long((long)error);
-    }
-    return NULL;
+    return LuaCEmbed_send_long((long)error);
 }
 
 LuaCEmbedResponse * private_silver_chain_lua_generator_watch_mode(LuaCEmbed *args){
@@ -26,8 +30,8 @@ LuaCEmbedResponse * private_silver_chain_lua_generator_watch_mode(LuaCEmbed *arg
     char * project_short_cut =  LuaCEmbed_get_str_arg(args,2);
     SilverChainStringArray *tags = (SilverChainStringArray*)LuaCEmbed_get_long_arg(args,3);
     bool implement_main = LuaCEmbed_get_bool_arg(args, 4);
-    char *main_name = LuaCEmbed_get_str_arg(args,5);
-    char *main_path = LuaCEmbed_get_str_arg(args,5);
+    char *main_name = private_silver_chain_get_str_arg_if_exist(args,5);
+    char *main_path = private_silver_chain_get_str_arg_if_exist(args,5);
     int timeout =  LuaCEmbed_get_long_arg(args,6);
     SilverChain_generate_code_in_watch_mode(src,import_dir,project_short_cut,tags,implement_main, main_name,main_path,timeout);
     return NULL;

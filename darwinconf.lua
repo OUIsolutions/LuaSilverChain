@@ -70,6 +70,8 @@ function generate_darwin_no_dependencie_not_included()
 end
 
 darwin.add_lua_code("public_silver_chain = {}")
+darwin.add_lua_code("private_silver_chain = {}")
+
 local concat_path = true
 local src_files = dtw.list_files_recursively("public", concat_path)
 for i = 1, #src_files do
@@ -91,4 +93,4 @@ dtw.copy_any_overwriting("types/luaSilverCHain_types.lua", "LuaSilverChain/types
 dtw.copy_any_overwriting("init.lua", "LuaSilverChain/init.lua")
 
 os.execute("gcc -shared -fpic release/lua_c_amalgamator_full.c -o LuaCAmalgamator/lua_c_amalgamator.so")
-os.execute("zip -r  release/LuaCAmalgamator.zip LuaCAmalgamator/")
+--os.execute("zip -r  release/LuaCAmalgamator.zip LuaCAmalgamator/")
