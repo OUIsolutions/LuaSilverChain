@@ -75,6 +75,14 @@ LuaCEmbedResponse * private_silver_chain_lua_apend_SiverChainStringArray(LuaCEmb
 int luaopen_private_silverchain_cinterop(lua_State *state){
     //functions will be only assescible by the required reciver
     LuaCEmbed * l = newLuaCEmbedLib(state);
+    LuaCEmbed_add_callback(l, "generate", private_silver_chain_lua_generator);
+    LuaCEmbed_add_callback(l, "generate_watch", private_silver_chain_lua_generator_watch_mode);
+    LuaCEmbed_add_callback(l, "get_error_msg", private_silver_chain_lua_get_error_msg);
+    LuaCEmbed_add_callback(l, "get_error_path", private_silver_chain_lua_get_error_path);
+    LuaCEmbed_add_callback(l, "free_error", private_silver_chain_lua_free_error);
+    LuaCEmbed_add_callback(l, "newStringArray", private_silver_chain_lua_new_SiverChainStringArray);
+    LuaCEmbed_add_callback(l, "free_string_array", private_silver_chain_lua_free_SiverChainStringArray);
+    LuaCEmbed_add_callback(l, "append_string_array", private_silver_chain_lua_apend_SiverChainStringArray);
 
     return LuaCembed_send_self_as_lib(l);
 }
