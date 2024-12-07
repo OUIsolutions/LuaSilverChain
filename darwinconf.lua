@@ -69,7 +69,7 @@ function generate_darwin_no_dependencie_not_included()
     dtw.write_file("release/silverchain_darwin_import.c", full_clib)
 end
 
-darwin.add_lua_code("public_silver_chain = {}")
+darwin.add_lua_code("public_lua_silverchain = {}")
 darwin.add_lua_code("private_silver_chain = {}")
 
 local concat_path = true
@@ -89,8 +89,8 @@ dtw.write_file(SILVER_CHAIN_PATH, camalgamator_content)
 generate_full_c()
 generate_darwin_import()
 generate_darwin_no_dependencie_not_included()
-dtw.copy_any_overwriting("types/luaSilverCHain_types.lua", "LuaSilverChain/types.lua")
-dtw.copy_any_overwriting("init.lua", "LuaSilverChain/init.lua")
+dtw.copy_any_overwriting("types/luaSilverCHain_types.lua", "release/LuaSilverChain/types.lua")
+dtw.copy_any_overwriting("init.lua", "release/LuaSilverChain/init.lua")
 
-os.execute("gcc -shared -fpic release/lua_silver_chain_shared.c -o LuaCAmalgamator/lua_silver_chain_shared.so")
+os.execute("gcc -shared -fpic release/silverchain_full.c -o release/LuaSilverChain/silverchain.so")
 --os.execute("zip -r  release/LuaCAmalgamator.zip LuaCAmalgamator/")

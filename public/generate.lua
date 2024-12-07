@@ -1,4 +1,6 @@
 public_lua_silverchain.generate = function(props)
+    private_silver_chain.check_types(props, { "table" }, "props")
+
     private_silver_chain.check_types(props.src, { "string" }, "props.src")
     private_silver_chain.check_types(props.import_dir, { "string", "nill" }, "props.import_dir")
     private_silver_chain.check_types(props.project_short_cut, { "string", "nill" }, "props.project_short_cut")
