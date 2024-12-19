@@ -3,6 +3,7 @@
 #include "dependencies/CTextEngine.h"
 #include "dependencies/CSilverChainApiNoDependenciesIncluded.h"
 
+
 char * private_silver_chain_get_str_arg_if_exist(LuaCEmbed *args,int index){
     if(LuaCEmbed_get_arg_type(args, index) == LUA_CEMBED_STRING){
         return  LuaCEmbed_get_str_arg(args,index);
@@ -18,10 +19,13 @@ LuaCEmbedResponse * private_silver_chain_lua_generator(LuaCEmbed *args){
     SilverChainStringArray *tags = (SilverChainStringArray*)LuaCEmbed_get_long_arg(args,3);
     bool implement_main = LuaCEmbed_get_bool_arg(args, 4);
     char *main_name = private_silver_chain_get_str_arg_if_exist(args,5);
-    char *main_path = private_silver_chain_get_str_arg_if_exist(args,5);
+    char *main_path = private_silver_chain_get_str_arg_if_exist(args,6);
+    if(LuaCEmbed_has_errors(args)){
+        printf("%s\n",LuaCEmbed_get_error_message(args));
+    }
 
     SilverChainError *error = SilverChain_generate_code(src,import_dir,project_short_cut,tags,implement_main, main_name,main_path);
-    return LuaCEmbed_send_long((long)error);
+    return LuaCEmbed_send_long((lua_Integer)error);
 }
 
 LuaCEmbedResponse * private_silver_chain_lua_generator_watch_mode(LuaCEmbed *args){
@@ -31,7 +35,7 @@ LuaCEmbedResponse * private_silver_chain_lua_generator_watch_mode(LuaCEmbed *arg
     SilverChainStringArray *tags = (SilverChainStringArray*)LuaCEmbed_get_long_arg(args,3);
     bool implement_main = LuaCEmbed_get_bool_arg(args, 4);
     char *main_name = private_silver_chain_get_str_arg_if_exist(args,5);
-    char *main_path = private_silver_chain_get_str_arg_if_exist(args,5);
+    char *main_path = private_silver_chain_get_str_arg_if_exist(args,6);
     int timeout =  LuaCEmbed_get_long_arg(args,6);
     SilverChain_generate_code_in_watch_mode(src,import_dir,project_short_cut,tags,implement_main, main_name,main_path,timeout);
     return NULL;
@@ -58,7 +62,7 @@ LuaCEmbedResponse * private_silver_chain_lua_free_error(LuaCEmbed *args){
 //============================ String Array =================================================
 LuaCEmbedResponse * private_silver_chain_lua_new_SiverChainStringArray(LuaCEmbed *args){
     SilverChainStringArray *value = newSilverChainStringArray();
-    return LuaCEmbed_send_long((long long )value);
+    return LuaCEmbed_send_long((lua_Integer )value);
 }
 
 LuaCEmbedResponse * private_silver_chain_lua_free_SiverChainStringArray(LuaCEmbed *args){
@@ -70,8 +74,7 @@ LuaCEmbedResponse * private_silver_chain_lua_free_SiverChainStringArray(LuaCEmbe
 LuaCEmbedResponse * private_silver_chain_lua_apend_SiverChainStringArray(LuaCEmbed *args){
     SilverChainStringArray *value = (SilverChainStringArray*)LuaCEmbed_get_long_arg(args,0);
     char *str  = LuaCEmbed_get_str_arg(args, 1);
-    //printf("%s\n",str);
-    //printf("valor: %lld",(long long)value);
+
     SilverChainStringArray_append(value, str);
     return NULL;
 }

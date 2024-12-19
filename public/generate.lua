@@ -41,7 +41,6 @@ public_lua_silverchain.generate = function(props)
     if implement_main == nil then
         implement_main = true
     end
-    print("pegou aqui")
     local error_obj = private_silverchain_cinterop.generate(
         props.src,
         import_dir,
@@ -52,7 +51,7 @@ public_lua_silverchain.generate = function(props)
         props.main_path
     )
     private_silverchain_cinterop.free_string_array(silver_chain_string_array)
-    if error then
+    if error_obj ~= 0 then
         error_msg = private_silverchain_cinterop.get_error_msg(error_obj)
         private_silverchain_cinterop.free_error(error_obj)
         error(error_msg)
