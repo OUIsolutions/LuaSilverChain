@@ -58,7 +58,7 @@ LuaCEmbedResponse * private_silver_chain_lua_free_error(LuaCEmbed *args){
 //============================ String Array =================================================
 LuaCEmbedResponse * private_silver_chain_lua_new_SiverChainStringArray(LuaCEmbed *args){
     SilverChainStringArray *value = newSilverChainStringArray();
-    return LuaCEmbed_send_long((long)value);
+    return LuaCEmbed_send_long((long long )value);
 }
 
 LuaCEmbedResponse * private_silver_chain_lua_free_SiverChainStringArray(LuaCEmbed *args){
@@ -70,6 +70,8 @@ LuaCEmbedResponse * private_silver_chain_lua_free_SiverChainStringArray(LuaCEmbe
 LuaCEmbedResponse * private_silver_chain_lua_apend_SiverChainStringArray(LuaCEmbed *args){
     SilverChainStringArray *value = (SilverChainStringArray*)LuaCEmbed_get_long_arg(args,0);
     char *str  = LuaCEmbed_get_str_arg(args, 1);
+    //printf("%s\n",str);
+    //printf("valor: %lld",(long long)value);
     SilverChainStringArray_append(value, str);
     return NULL;
 }

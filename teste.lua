@@ -2,6 +2,6 @@
 silverchain = require("release/LuaSilverChain")
 
 silverchain.generate({
-    src = "luadoTssheWorld",
+    src = "luadoTheWorld",
     tags = { "consts", "dependency", "fdeclare", "fdefine", "macros" }
 })

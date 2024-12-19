@@ -1,8 +1,8 @@
 rm -rf dependencies
 mkdir dependencies
-curl -L https://github.com/OUIsolutions/Darwin/releases/download/0.013/darwin013.c -o darwin.c
+curl -L https://github.com/OUIsolutions/Darwin/releases/download/0.013/darwin015.c -o darwin.c
 gcc darwin.c -o darwin.o
-curl -L https://github.com/OUIsolutions/LuaCEmbed/releases/download/v0.778/LuaCEmbed.h -o dependencies/LuaCEmbed.h
+curl -L https://github.com/OUIsolutions/LuaCEmbed/releases/download/v0.779/LuaCEmbed.h -o dependencies/LuaCEmbed.h
 
 
 curl -L https://github.com/OUIsolutions/SilverChain/releases/download/v0.08/CSilverChainApiNoDependenciesIncluded.h -o  dependencies/CSilverChainApiNoDependenciesIncluded.h

@@ -8,7 +8,6 @@ public_lua_silverchain.generate = function(props)
     private_silver_chain.check_types(props.implement_main, { "boolean", "nil" }, "props.implement_main")
     private_silver_chain.check_types(props.main_file, { "string", "nil" }, "props.main_file")
     private_silver_chain.check_types(props.main_path, { "string", "nil" }, "props.main_path")
-    print("pegou aqui")
     local import_dir = props.import_dir
     if not import_dir then
         import_dir = props.src .. "/imports"
@@ -30,17 +29,19 @@ public_lua_silverchain.generate = function(props)
     end
 
     local silver_chain_string_array = private_silverchain_cinterop.newStringArray()
-
     for i = 1, #props.tags do
+        local current = props.tags[i]
+        private_silver_chain.check_types(current, { "string" }, "tags[" .. i .. "]")
         private_silverchain_cinterop.append_string_array(
             silver_chain_string_array,
             props.tags[i])
     end
+
     local implement_main = props.implement_main
     if implement_main == nil then
         implement_main = true
     end
-
+    print("pegou aqui")
     local error_obj = private_silverchain_cinterop.generate(
         props.src,
         import_dir,
