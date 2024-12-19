@@ -8,7 +8,7 @@ public_lua_silverchain.generate = function(props)
     private_silver_chain.check_types(props.implement_main, { "boolean", "nil" }, "props.implement_main")
     private_silver_chain.check_types(props.main_file, { "string", "nil" }, "props.main_file")
     private_silver_chain.check_types(props.main_path, { "string", "nil" }, "props.main_path")
-
+    print("pegou aqui")
     local import_dir = props.import_dir
     if not import_dir then
         import_dir = props.src .. "/imports"

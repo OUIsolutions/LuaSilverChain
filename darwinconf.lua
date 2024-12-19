@@ -48,10 +48,10 @@ function generate_darwin_no_dependencie_not_included()
     private_darwin.resset_c()
 
     darwin.add_c_file("citerop.c", true, function(import, path)
-        if import ~= "dependencies/CSilverChainApiNoDependenciesIncluded.h" then
-            return false
+        if import == "dependencies/CSilverChainApiNoDependenciesIncluded.h" then
+            return true
         end
-        return true
+        return false
     end)
 
     darwin.load_lualib_from_c(
@@ -66,7 +66,7 @@ function generate_darwin_no_dependencie_not_included()
     })
 
     full_clib = full_clib:gsub(SILVER_CHAIN_CODE, "#include")
-    dtw.write_file("release/silverchain_darwin_import.c", full_clib)
+    dtw.write_file("release/silverchain_no_dependecie_included.c", full_clib)
 end
 
 darwin.add_lua_code("public_lua_silverchain = {}")
