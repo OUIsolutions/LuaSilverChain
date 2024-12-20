@@ -20,7 +20,6 @@ function generate_full_c()
     full_clib = full_clib:gsub(SILVER_CHAIN_CODE, "#include")
     dtw.write_file("release/silverchain_full.c", full_clib)
 end
-
 function generate_darwin_import()
     private_darwin.resset_c()
     darwin.add_c_file("citerop.c", true, function(import, path)
@@ -89,6 +88,7 @@ dtw.write_file(SILVER_CHAIN_PATH, camalgamator_content)
 generate_full_c()
 generate_darwin_import()
 generate_darwin_no_dependencie_not_included()
+
 dtw.copy_any_overwriting("types/luaSilverCHain_types.lua", "LuaSilverChain/types.lua")
 dtw.copy_any_overwriting("init.lua", "LuaSilverChain/init.lua")
 
