@@ -1,5 +1,7 @@
 # Prerequisites
 *.d
+LuaSilverChain
+teste.lua
 luadoTheWorld
 debug.lua
 release
