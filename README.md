@@ -18,7 +18,7 @@ silverchain = require("LuaSilverChain")
 silverchain.generate({
     src = "src",
     project_short_cut = "my_project_name",
-    tags = { "dependencies", "consts",  "macros", "types" ,"globals", "fdeclare" ,"fdef" }
+    tags = { "dependencies", "consts",  "macros", "types" ,"globals", "fdeclare" ,"fdef" },
     implement_main=true,
     main_name="main.c"
 })
