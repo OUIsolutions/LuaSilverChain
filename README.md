@@ -5,7 +5,7 @@ a [SilverChain](https://github.com/OUIsolutions/SilverChain) Lua Wrapper
 
 for installation just type
 ```shell 
-curl -L https://github.com/OUIsolutions/LuaSilverChain/releases/download/0.001/LuaSilverChain.zip -o LuaSilverChain.zip && unzip LuaSilverChain.zip  && rm LuaSilverChain.zip 
+curl -L https://github.com/OUIsolutions/LuaSilverChain/releases/download/0.0.3/LuaSilverChain.zip -o LuaSilverChain.zip && unzip LuaSilverChain.zip  && rm LuaSilverChain.zip 
 
 ```
 
