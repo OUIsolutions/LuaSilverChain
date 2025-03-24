@@ -2,6 +2,16 @@
 a [SilverChain](https://github.com/OUIsolutions/SilverChain) Lua Wrapper
 
 
+# Release
+
+| Item| What it is |
+|-----|------------|
+| [LuaSilverChain.zip](https://github.com/OUIsolutions/LuaSilverChain/releases/download/0.0.5/LuaSilverChain.zip)| Zip file with the LuaSilverChain module |
+|[silverchain_darwin_import.c](https://github.com/OUIsolutions/LuaSilverChain/releases/download/0.0.5/silverchain_darwin_import.c) | C file to be used with Darwin to build the LuaSilverChain module |
+|[silverchain_full.c](https://github.com/OUIsolutions/LuaSilverChain/releases/download/0.0.5/silverchain_full.c) | C file with the full implementation of the LuaSilverChain module |
+|[silverchain_no_dependecie_included.c](https://github.com/OUIsolutions/LuaSilverChain/releases/download/0.0.5/silverchain_no_dependecie_included.c)| C file with the implementation of the LuaSilverChain module without the dependencies included |
+
+
 
 # Install
 
