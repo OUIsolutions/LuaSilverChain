@@ -17,7 +17,7 @@ a [SilverChain](https://github.com/OUIsolutions/SilverChain) Lua Wrapper
 
 for installation just type
 ```shell 
-curl -L https://github.com/OUIsolutions/LuaSilverChain/releases/download/0.0.4/LuaSilverChain.zip -o LuaSilverChain.zip && unzip LuaSilverChain.zip  && rm LuaSilverChain.zip 
+curl -L https://github.com/OUIsolutions/LuaSilverChain/releases/download/0.0.5/LuaSilverChain.zip -o LuaSilverChain.zip && unzip LuaSilverChain.zip  && rm LuaSilverChain.zip 
 
 ```
 
@@ -34,6 +34,8 @@ silverchain.generate({
     implement_main=true,
     main_name="main.c"
 })
+
+
 
 ```
 
