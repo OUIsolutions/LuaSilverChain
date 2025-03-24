@@ -2,6 +2,7 @@
 *.d
 LuaSilverChain
 teste.lua
+.cache
 luadoTheWorld
 debug.lua
 release

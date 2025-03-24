@@ -20,6 +20,7 @@ function generate_full_c()
     full_clib = full_clib:gsub(SILVER_CHAIN_CODE, "#include")
     dtw.write_file("release/silverchain_full.c", full_clib)
 end
+
 function generate_darwin_import()
     private_darwin.resset_c()
     darwin.add_c_file("citerop.c", true, function(import, path)
