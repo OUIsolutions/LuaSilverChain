@@ -101,7 +101,7 @@ int luaopen_private_silverchain_cinterop(lua_State *state){
     //functions will be only assescible by the required reciver
     LuaCEmbed * l = newLuaCEmbedLib(state);
     LuaCEmbed_add_callback(l, "generate", private_silver_chain_lua_generator);
-    LuaCEmbed_add_callback(l, "remove", private_silver_chain_lua_remove);
+    LuaCEmbed_add_callback(l, "remove_source", private_silver_chain_lua_remove);
     LuaCEmbed_add_callback(l, "generate_watch", private_silver_chain_lua_generator_watch_mode);
     LuaCEmbed_add_callback(l, "get_error_msg", private_silver_chain_lua_get_error_msg);
     LuaCEmbed_add_callback(l, "get_error_path", private_silver_chain_lua_get_error_path);
