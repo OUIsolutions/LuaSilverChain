@@ -17,15 +17,15 @@ function create_start_project()
 end 
 
 function generate_full_c()
-    private_darwin.resset_c()
+    local project = create_start_project()
 
-    darwin.add_c_file("citerop.c", true)
-    darwin.load_lualib_from_c(
+    project.add_c_file("citerop.c", true)
+    project.load_lualib_from_c(
         "luaopen_private_silverchain_cinterop",
         "private_silverchain_cinterop"
     )
 
-    local full_clib = darwin.generate_c_lib_code({
+    local full_clib = project.generate_c_lib_code({
         libname = "lua_silverchain",
         object_export = "public_lua_silverchain",
         include_e_luacembed = false
@@ -36,19 +36,20 @@ function generate_full_c()
 end
 
 function generate_darwin_import()
-    private_darwin.resset_c()
-    darwin.add_c_file("citerop.c", true, function(import, path)
+    local project = create_start_project()
+
+    project.add_c_file("citerop.c", true, function(import, path)
         if import == "dependencies/LuaCEmbed.h" then
             return false
         end
         return true
     end)
-    darwin.load_lualib_from_c(
+    project.load_lualib_from_c(
         "luaopen_private_silverchain_cinterop",
         "private_silverchain_cinterop"
     )
 
-    local full_clib = darwin.generate_c_lib_code({
+    local full_clib = project.generate_c_lib_code({
         libname = "lua_silverchain",
         object_export = "public_lua_silverchain",
         include_e_luacembed = false
@@ -59,21 +60,22 @@ function generate_darwin_import()
 end
 
 function generate_darwin_no_dependencie_not_included()
-    private_darwin.resset_c()
+   
+    local project = create_start_project()
 
-    darwin.add_c_file("citerop.c", true, function(import, path)
+    project.add_c_file("citerop.c", true, function(import, path)
         if import == "dependencies/CSilverChainApiNoDependenciesIncluded.h" then
             return true
         end
         return false
     end)
 
-    darwin.load_lualib_from_c(
+    project.load_lualib_from_c(
         "luaopen_private_silverchain_cinterop",
         "private_silverchain_cinterop"
     )
 
-    local full_clib = darwin.generate_c_lib_code({
+    local full_clib = project.generate_c_lib_code({
         libname = "lua_silverchain",
         object_export = "public_lua_silverchain",
         include_e_luacembed = false
