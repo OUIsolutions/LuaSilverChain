@@ -24,6 +24,7 @@ curl -L https://github.com/OUIsolutions/LuaSilverChain/releases/download/0.0.5/L
 # Usage
 you can use the lib following these example 
 
+## Generation
 ```lua
 ---@type SilverChainModue
 silverchain = require("LuaSilverChain")
@@ -35,10 +36,13 @@ silverchain.generate({
     main_name="main.c"
 })
 
-
-
 ```
+## Remove 
 
+```lua
+silverchain = require("LuaSilverChain")
+silverchain.remove("src")
+```
 ## Building from Scratch
 if you want to build the code from scracth  you need to have [Darwin](https://github.com/OUIsolutions/Darwin) 
 installed on versio **0.020** and **Docker** our **Podman** installed on your machine.
