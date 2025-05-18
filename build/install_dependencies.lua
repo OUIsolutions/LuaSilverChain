@@ -3,7 +3,7 @@ function Install_dependencies()
     os.execute("mkdir -p dependencies")
 
     local libs = {
-        {url="https://github.com/OUIsolutions/LuaCEmbed/releases/download/v0.779/LuaCEmbed.h",path="dependencies/LuaCEmbed.h"},
+        {url="https://github.com/OUIsolutions/LuaCEmbed/releases/download/0.8.3/LuaCEmbedOne.c",path="dependencies/LuaCEmbedOne.c"},
         {url="https://github.com/OUIsolutions/SilverChain/releases/download/0.2.1/SilverChainApiNoDependenciesIncluded.h",path="dependencies/CSilverChainApiNoDependenciesIncluded.h"},
         {url="https://github.com/OUIsolutions/CTextEngine/releases/download/v2.002/CTextEngine.h",path="dependencies/CTextEngine.h"},   
         {url="https://github.com/OUIsolutions/DoTheWorld/releases/download/v8.002/doTheWorld.h",path="dependencies/doTheWorld.h"},

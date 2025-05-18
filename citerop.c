@@ -1,4 +1,7 @@
-#include "dependencies/LuaCEmbed.h"
+
+#define error LuaSilverCHainError 
+#include "dependencies/LuaCEmbedOne.c"
+#undef error  
 #include "dependencies/doTheWorld.h"
 #include "dependencies/CTextEngine.h"
 #include "dependencies/CSilverChainApiNoDependenciesIncluded.h"
