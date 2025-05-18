@@ -28,7 +28,7 @@ function generate_full_c()
     local full_clib = project.generate_c_lib_code({
         libname = "lua_silverchain",
         object_export = "public_lua_silverchain",
-        include_e_luacembed = false
+        include_lua_cembed = false
     })
 
     full_clib = full_clib:gsub(SILVER_CHAIN_CODE, "#include")
@@ -52,7 +52,7 @@ function generate_darwin_import()
     local full_clib = project.generate_c_lib_code({
         libname = "lua_silverchain",
         object_export = "public_lua_silverchain",
-        include_e_luacembed = false
+        include_lua_cembed = false
     })
 
     full_clib = full_clib:gsub(SILVER_CHAIN_CODE, "#include")
@@ -78,7 +78,7 @@ function generate_darwin_no_dependencie_not_included()
     local full_clib = project.generate_c_lib_code({
         libname = "lua_silverchain",
         object_export = "public_lua_silverchain",
-        include_e_luacembed = false
+        include_lua_cembed = false
     })
 
     full_clib = full_clib:gsub(SILVER_CHAIN_CODE, "#include")
