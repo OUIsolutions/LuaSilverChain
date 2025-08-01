@@ -4,7 +4,7 @@ function Install_dependencies()
 
     local libs = {
         {url="https://github.com/OUIsolutions/LuaCEmbed/releases/download/0.8.3/LuaCEmbedOne.c",path="dependencies/LuaCEmbedOne.c"},
-        {url="https://github.com/OUIsolutions/SilverChain/releases/download/0.2.2/SilverChainApiNoDependenciesIncluded.h",path="dependencies/CSilverChainApiNoDependenciesIncluded.h"},
+        {url="https://github.com/OUIsolutions/SilverChain/releases/download/0.3.0/SilverChainApiNoDependenciesIncluded.h",path="dependencies/CSilverChainApiNoDependenciesIncluded.h"},
         {url="https://github.com/OUIsolutions/CTextEngine/releases/download/v2.002/CTextEngine.h",path="dependencies/CTextEngine.h"},   
         {url="https://github.com/OUIsolutions/DoTheWorld/releases/download/v8.002/doTheWorld.h",path="dependencies/doTheWorld.h"},
         {url="https://github.com/OUIsolutions/C-Cli-Entry/releases/download/0.001/CliEntry.h",path="dependencies/CliEntry.h"},

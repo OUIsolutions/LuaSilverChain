@@ -59,6 +59,17 @@ LuaCEmbedResponse *private_silver_chain_lua_remove(LuaCEmbed *args){
     SilverCHain_remove_start_end_from_folder(src);    
     return NULL;
 }
+LuaCEmbedResponse *private_silver_chain_lua_remove_from_content(LuaCEmbed *args){
+    char *content = LuaCEmbed_get_str_arg(args, 0);
+    char *result = SilverChain_remove_start_end_from_string(content);
+    if(result){
+        LuaCEmbedResponse *response = LuaCEmbed_send_str(result);
+        free(result);
+        return response;
+    }
+    return NULL;
+}
+
 
 //============================ Errors ========================================================
 
@@ -105,6 +116,7 @@ int luaopen_private_silverchain_cinterop(lua_State *state){
     LuaCEmbed * l = newLuaCEmbedLib(state);
     LuaCEmbed_add_callback(l, "generate", private_silver_chain_lua_generator);
     LuaCEmbed_add_callback(l, "remove_source", private_silver_chain_lua_remove);
+    LuaCEmbed_add_callback(l, "remove_from_content", private_silver_chain_lua_remove_from_content);
     LuaCEmbed_add_callback(l, "generate_watch", private_silver_chain_lua_generator_watch_mode);
     LuaCEmbed_add_callback(l, "get_error_msg", private_silver_chain_lua_get_error_msg);
     LuaCEmbed_add_callback(l, "get_error_path", private_silver_chain_lua_get_error_path);
