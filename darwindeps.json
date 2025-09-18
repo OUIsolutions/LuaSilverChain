@@ -1,0 +1,27 @@
+[
+  {
+    "type": "url",
+    "url": "https://github.com/OUIsolutions/LuaCEmbed/releases/download/0.8.3/LuaCEmbedOne.c",
+    "dest": "dependencies/LuaCEmbedOne.c"
+  },
+  {
+    "type": "url",
+    "url": "https://github.com/OUIsolutions/SilverChain/releases/download/0.3.0/SilverChainApiNoDependenciesIncluded.h",
+    "dest": "dependencies/CSilverChainApiNoDependenciesIncluded.h"
+  },
+  {
+    "type": "url",
+    "url": "https://github.com/OUIsolutions/CTextEngine/releases/download/v2.002/CTextEngine.h",
+    "dest": "dependencies/CTextEngine.h"
+  },
+  {
+    "type": "url",
+    "url": "https://github.com/OUIsolutions/DoTheWorld/releases/download/v8.002/doTheWorld.h",
+    "dest": "dependencies/doTheWorld.h"
+  },
+  {
+    "type": "url",
+    "url": "https://github.com/OUIsolutions/C-Cli-Entry/releases/download/0.001/CliEntry.h",
+    "dest": "dependencies/CliEntry.h"
+  }
+]
