@@ -1,27 +1,36 @@
-[
-  {
-    "type": "url",
-    "url": "https://github.com/OUIsolutions/LuaCEmbed/releases/download/0.8.3/LuaCEmbedOne.c",
-    "dest": "dependencies/LuaCEmbedOne.c"
-  },
-  {
-    "type": "url",
-    "url": "https://github.com/OUIsolutions/SilverChain/releases/download/0.3.0/SilverChainApiNoDependenciesIncluded.h",
-    "dest": "dependencies/CSilverChainApiNoDependenciesIncluded.h"
-  },
-  {
-    "type": "url",
-    "url": "https://github.com/OUIsolutions/CTextEngine/releases/download/v2.002/CTextEngine.h",
-    "dest": "dependencies/CTextEngine.h"
-  },
-  {
-    "type": "url",
-    "url": "https://github.com/OUIsolutions/DoTheWorld/releases/download/v8.002/doTheWorld.h",
-    "dest": "dependencies/doTheWorld.h"
-  },
-  {
-    "type": "url",
-    "url": "https://github.com/OUIsolutions/C-Cli-Entry/releases/download/0.001/CliEntry.h",
-    "dest": "dependencies/CliEntry.h"
-  }
-]
+[{
+		"dest":	"dependencies/LuaCEmbedOne.c",
+		"file":	"LuaCEmbedOne.c",
+		"repo":	"OUIsolutions/LuaCEmbed",
+		"tag":	"0.13.0",
+		"type":	"gitrelease",
+		"updated_at":	"2025-10-05T12:21:23Z"
+	}, {
+		"dest":	"dependencies/CSilverChainApiNoDependenciesIncluded.h",
+		"file":	"SilverChainApiNoDependenciesIncluded.h",
+		"repo":	"OUIsolutions/SilverChain",
+		"tag":	"0.3.0",
+		"type":	"gitrelease",
+		"updated_at":	"2025-08-01T15:53:47Z"
+	}, {
+		"dest":	"dependencies/CTextEngine.h",
+		"file":	"CTextEngine.h",
+		"repo":	"OUIsolutions/CTextEngine",
+		"tag":	"3.0.000",
+		"type":	"gitrelease",
+		"updated_at":	"2025-03-08T06:54:29Z"
+	}, {
+		"dest":	"dependencies/doTheWorld.h",
+		"file":	"doTheWorld.h",
+		"repo":	"OUIsolutions/DoTheWorld",
+		"tag":	"11.2.1",
+		"type":	"gitrelease",
+		"updated_at":	"2026-02-14T22:28:56Z"
+	}, {
+		"dest":	"dependencies/CliEntry.h",
+		"file":	"CliEntry.h",
+		"repo":	"OUIsolutions/C-Cli-Entry",
+		"tag":	"0.001",
+		"type":	"gitrelease",
+		"updated_at":	"2024-11-06T01:16:19Z"
+	}]
