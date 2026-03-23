@@ -6,7 +6,7 @@
 #include "dependencies/CTextEngine.h"
 #include "dependencies/CSilverChainApiNoDependenciesIncluded.h"
 
-#if defined(__linux__) || defined(__APPLE__)_
+#if defined(__linux__) || defined(__APPLE__)
 #define  private_lua_silver_chain_ptr_cast long long
 #endif
 
