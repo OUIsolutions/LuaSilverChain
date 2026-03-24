@@ -2,8 +2,8 @@
 #define error LuaSilverCHainError 
 #include "dependencies/LuaCEmbedOne.c"
 #undef error  
-#include "dependencies/doTheWorld.h"
-#include "dependencies/CTextEngine.h"
+#include "dependencies/doTheWorldOne.c"
+#include "dependencies/CTextEngineOne.c"
 #include "dependencies/CSilverChainApiNoDependenciesIncluded.h"
 
 #if defined(__linux__) || defined(__APPLE__)

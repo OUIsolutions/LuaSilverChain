@@ -13,15 +13,15 @@
 		"type":	"gitrelease",
 		"updated_at":	"2025-08-01T15:53:47Z"
 	}, {
-		"dest":	"dependencies/CTextEngine.h",
-		"file":	"CTextEngine.h",
+		"dest":	"dependencies/CTextEngineOne.c",
+		"file":	"CTextEngineOne.c",
 		"repo":	"OUIsolutions/CTextEngine",
 		"tag":	"3.0.000",
 		"type":	"gitrelease",
 		"updated_at":	"2025-03-08T06:54:29Z"
 	}, {
-		"dest":	"dependencies/doTheWorld.h",
-		"file":	"doTheWorld.h",
+		"dest":	"dependencies/doTheWorldOne.c",
+		"file":	"doTheWorldOne.c",
 		"repo":	"OUIsolutions/DoTheWorld",
 		"tag":	"11.2.1",
 		"type":	"gitrelease",
