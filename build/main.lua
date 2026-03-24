@@ -4,7 +4,6 @@ SILVER_CHAIN_PATH = "dependencies/CSilverChainApiNoDependenciesIncluded.h"
 
 
 function main()
-    Install_dependencies()
 
     darwin.dtw.remove_any("release")
 
