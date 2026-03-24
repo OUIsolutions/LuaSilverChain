@@ -18,14 +18,14 @@
 		"repo":	"OUIsolutions/CTextEngine",
 		"tag":	"3.0.000",
 		"type":	"gitrelease",
-		"updated_at":	"2025-03-08T06:54:29Z"
+		"updated_at":	"2025-03-08T06:54:28Z"
 	}, {
 		"dest":	"dependencies/doTheWorldOne.c",
 		"file":	"doTheWorldOne.c",
 		"repo":	"OUIsolutions/DoTheWorld",
 		"tag":	"11.2.1",
 		"type":	"gitrelease",
-		"updated_at":	"2026-02-14T22:28:56Z"
+		"updated_at":	"2026-02-14T22:28:57Z"
 	}, {
 		"dest":	"dependencies/CliEntry.h",
 		"file":	"CliEntry.h",
